@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800&display=swap");
 
 .plasmic_tokens {
+  --token-kKZqMrQwBAkE: #535353;
+  --plasmic-token-unnamed-style-token: var(--token-kKZqMrQwBAkE);
+}
+
+.plasmic_tokens {
   --plsmc-standard-width: 800px;
   --plsmc-wide-width: 1280px;
   --plsmc-viewport-gap: 16px;
@@ -123,10 +128,12 @@
   --mixin-ayW42hezFDrx_font-weight: 600;
   --mixin-ayW42hezFDrx_line-height: 1.5;
   --mixin-ayW42hezFDrx_white-space: pre-wrap;
-  --mixin-izCSEItIYpU4_color: #000000;
-  --mixin-izCSEItIYpU4_font-size: 16px;
+  --mixin-izCSEItIYpU4_color: var(--token-LqpCVPPZF4_r);
+  --mixin-izCSEItIYpU4_font-size: 12px;
   --mixin-izCSEItIYpU4_font-weight: 600;
   --mixin-izCSEItIYpU4_line-height: 1.5;
+  --mixin-izCSEItIYpU4_text-transform: uppercase;
+  --mixin-izCSEItIYpU4_margin-top: 32px;
   --mixin-izCSEItIYpU4_white-space: pre-wrap;
   --mixin-fvzSjjwyGPr4_color: #3291ff;
   --mixin-fvzSjjwyGPr4_white-space: pre-wrap;
@@ -631,6 +638,8 @@ h6:where(.root_reset_tags) {
   font-size: var(--mixin-izCSEItIYpU4_font-size);
   font-weight: var(--mixin-izCSEItIYpU4_font-weight);
   line-height: var(--mixin-izCSEItIYpU4_line-height);
+  text-transform: var(--mixin-izCSEItIYpU4_text-transform);
+  margin-top: var(--mixin-izCSEItIYpU4_margin-top);
 }
 
 :where(.root_reset) a:where(.a):hover,

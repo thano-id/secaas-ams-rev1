@@ -25,10 +25,10 @@ import {
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import * as pp from "@plasmicapp/react-web";
 import "@plasmicapp/react-web/lib/plasmic.css";
+import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
+import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: qMKbWqzZjuHb1yLhCiN5Mq/projectcss
 import sty from "./PlasmicButton2.module.css"; // plasmic-import: lci14Q3sXnn8/css
-import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: Eox2JrlKfBxf/icon
-import Icon38Icon from "./icons/PlasmicIcon__Icon38"; // plasmic-import: Nnwij3aK23vB/icon
 
 createPlasmicElementProxy;
 
@@ -149,6 +149,8 @@ function PlasmicButton2__RenderFunc(props) {
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
+        plasmic_antd_5_hostless_css.plasmic_tokens,
+        plasmic_plasmic_rich_components_css.plasmic_tokens,
         sty.root,
         {
           [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
@@ -232,7 +234,7 @@ function PlasmicButton2__RenderFunc(props) {
         >
           {renderPlasmicSlot({
             defaultContents: (
-              <CheckSvgIcon
+              <svg
                 className={classNames(projectcss.all, sty.svg___2FkW8)}
                 role={"img"}
               />
@@ -443,12 +445,17 @@ function PlasmicButton2__RenderFunc(props) {
               $state,
               "showEndIcon",
               "showEndIcon"
+            ),
+            [sty.endIconContainershowStartIcon]: hasVariant(
+              $state,
+              "showStartIcon",
+              "showStartIcon"
             )
           })}
         >
           {renderPlasmicSlot({
             defaultContents: (
-              <Icon38Icon
+              <svg
                 className={classNames(projectcss.all, sty.svg__vy8AK)}
                 role={"img"}
               />
@@ -505,6 +512,11 @@ function PlasmicButton2__RenderFunc(props) {
                 $state,
                 "showEndIcon",
                 "showEndIcon"
+              ),
+              [sty.slotTargetEndIconshowStartIcon]: hasVariant(
+                $state,
+                "showStartIcon",
+                "showStartIcon"
               )
             })
           })}

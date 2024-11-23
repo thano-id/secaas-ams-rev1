@@ -2,24 +2,24 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
-import GlobalContextsProvider from "../components/plasmic/blank_website/PlasmicGlobalContextsProvider";
-import { PlasmicHomePage } from "../components/plasmic/blank_website/PlasmicHomePage";
+import GlobalContextsProvider from "../../components/plasmic/blank_website/PlasmicGlobalContextsProvider";
+import { PlasmicProfilePage } from "../../components/plasmic/blank_website/PlasmicProfilePage";
 import { useRouter } from "next/router";
 
-function HomePage() {
-  // Use PlasmicHomePage to render this component as it was
+function ProfilePage() {
+  // Use PlasmicProfilePage to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicHomePage are:
+  // Props you can pass into PlasmicProfilePage are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, PlasmicHomePage is wrapped by your project's global
+  // By default, PlasmicProfilePage is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -30,10 +30,10 @@ function HomePage() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicHomePage />
+        <PlasmicProfilePage />
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );
 }
 
-export default HomePage;
+export default ProfilePage;
