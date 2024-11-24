@@ -18,10 +18,7 @@ import {
   renderPlasmicSlot
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
-import MainPageHeaderMinimal from "../../MainPageHeaderMinimal"; // plasmic-import: 8Q71FYMQzUgF/component
-import SideMenuItem from "../../SideMenuItem"; // plasmic-import: fvhUR2yOqw0U/component
-import SideMenuSectionHead from "../../SideMenuSectionHead"; // plasmic-import: lRSRG8YACsJd/component
-import Me from "../../Me"; // plasmic-import: M7n-Yi6ESK-n/component
+import SideMenu from "../../SideMenu"; // plasmic-import: isERhG8IUBG8/component
 import { RichTable } from "@plasmicpkgs/plasmic-rich-components/skinny/rich-table";
 import NavMenu from "../../NavMenu"; // plasmic-import: 3imnKZ-iAV2D/component
 import { useScreenVariants as useScreenVariants_9QPfl0YfbSni } from "./PlasmicGlobalVariant__Mobile"; // plasmic-import: 9qPFL0yfbSNI/globalVariant
@@ -30,13 +27,6 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: qMKbWqzZjuHb1yLhCiN5Mq/projectcss
 import sty from "./PlasmicMainPageLayout.module.css"; // plasmic-import: bCVUuc7VYiYw/css
-import Building3SvgrepoComSvgIcon from "./icons/PlasmicIcon__Building3SvgrepoComSvg"; // plasmic-import: Rf7C0Vgmu0Zn/icon
-import UserCirlceAddSvgrepoComSvgIcon from "./icons/PlasmicIcon__UserCirlceAddSvgrepoComSvg"; // plasmic-import: aq1t0PjDqNmi/icon
-import UserOctagonSvgrepoComSvgIcon from "./icons/PlasmicIcon__UserOctagonSvgrepoComSvg"; // plasmic-import: ZNIK1Plt2HkI/icon
-import BookSavedSvgrepoComSvgIcon from "./icons/PlasmicIcon__BookSavedSvgrepoComSvg"; // plasmic-import: beTsf8tVlWYp/icon
-import BuildingsSvgrepoComSvg2Icon from "./icons/PlasmicIcon__BuildingsSvgrepoComSvg2"; // plasmic-import: YnW0xt9auy5O/icon
-import BuildingSvgrepoComSvgIcon from "./icons/PlasmicIcon__BuildingSvgrepoComSvg"; // plasmic-import: 8sTcdDxLmqNz/icon
-import Archive2SvgrepoComSvgIcon from "./icons/PlasmicIcon__Archive2SvgrepoComSvg"; // plasmic-import: GmE4DgTrkmB4/icon
 
 createPlasmicElementProxy;
 
@@ -99,143 +89,12 @@ function PlasmicMainPageLayout__RenderFunc(props) {
       )}
     >
       <div className={classNames(projectcss.all, sty.freeBox__sKqc4)}>
-        <div
+        <SideMenu
           data-plasmic-name={"sideMenu"}
           data-plasmic-override={overrides.sideMenu}
-          className={classNames(projectcss.all, sty.sideMenu)}
-        >
-          <MainPageHeaderMinimal
-            data-plasmic-name={"mainPageHeaderMinimal"}
-            data-plasmic-override={overrides.mainPageHeaderMinimal}
-            className={classNames("__wab_instance", sty.mainPageHeaderMinimal)}
-          />
+          className={classNames("__wab_instance", sty.sideMenu)}
+        />
 
-          <div className={classNames(projectcss.all, sty.freeBox__xWhbW)} />
-          <SideMenuItem
-            className={classNames("__wab_instance", sty.sideMenuItem___22J8)}
-            subtitle={``}
-            title={"Dashboard"}
-          >
-            <Building3SvgrepoComSvgIcon
-              className={classNames(projectcss.all, sty.svg__meW)}
-              role={"img"}
-            />
-          </SideMenuItem>
-          <SideMenuItem
-            className={classNames("__wab_instance", sty.sideMenuItem__u1Cgt)}
-            subtitle={``}
-            title={"Check in"}
-          >
-            <UserCirlceAddSvgrepoComSvgIcon
-              className={classNames(projectcss.all, sty.svg__tZayh)}
-              role={"img"}
-            />
-          </SideMenuItem>
-          <SideMenuItem
-            className={classNames("__wab_instance", sty.sideMenuItem___6T6Rx)}
-            subtitle={``}
-            title={"Check out"}
-          >
-            <UserOctagonSvgrepoComSvgIcon
-              className={classNames(projectcss.all, sty.svg__o7Git)}
-              role={"img"}
-            />
-          </SideMenuItem>
-          <SideMenuSectionHead
-            className={classNames(
-              "__wab_instance",
-              sty.sideMenuSectionHead__ysVnj
-            )}
-            title={"Reports & Stats"}
-          />
-
-          <SideMenuItem
-            className={classNames("__wab_instance", sty.sideMenuItem__bp9Yo)}
-            subtitle={``}
-            title={"Visitors"}
-          >
-            <BookSavedSvgrepoComSvgIcon
-              className={classNames(projectcss.all, sty.svg__m4Qr9)}
-              role={"img"}
-            />
-          </SideMenuItem>
-          <div className={classNames(projectcss.all, sty.freeBox__vv4J)} />
-          <SideMenuSectionHead
-            className={classNames(
-              "__wab_instance",
-              sty.sideMenuSectionHead__ul4K3
-            )}
-            title={"Settings & Parameters"}
-          />
-
-          <SideMenuItem
-            className={classNames("__wab_instance", sty.sideMenuItem__ciSdN)}
-            subtitle={``}
-            title={"Properties"}
-          >
-            <BuildingsSvgrepoComSvg2Icon
-              className={classNames(projectcss.all, sty.svg__chCb)}
-              role={"img"}
-            />
-          </SideMenuItem>
-          <SideMenuItem
-            className={classNames("__wab_instance", sty.sideMenuItem__shQkn)}
-            subtitle={``}
-            title={"Tenants"}
-          >
-            <BuildingSvgrepoComSvgIcon
-              className={classNames(projectcss.all, sty.svg__qwhav)}
-              role={"img"}
-            />
-          </SideMenuItem>
-          <SideMenuItem
-            className={classNames("__wab_instance", sty.sideMenuItem__knRp6)}
-            subtitle={``}
-            title={"Master data"}
-          >
-            <Archive2SvgrepoComSvgIcon
-              className={classNames(projectcss.all, sty.svg__t7BdJ)}
-              role={"img"}
-            />
-          </SideMenuItem>
-          <div className={classNames(projectcss.all, sty.freeBox__w6HAx)} />
-          <div
-            className={classNames(projectcss.all, sty.freeBox__u41YX)}
-            onClick={async event => {
-              const $steps = {};
-              $steps["goToProfilePage"] = true
-                ? (() => {
-                    const actionArgs = { destination: `/user/profile` };
-                    return (({ destination }) => {
-                      if (
-                        typeof destination === "string" &&
-                        destination.startsWith("#")
-                      ) {
-                        document
-                          .getElementById(destination.substr(1))
-                          .scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        __nextRouter?.push(destination);
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["goToProfilePage"] != null &&
-                typeof $steps["goToProfilePage"] === "object" &&
-                typeof $steps["goToProfilePage"].then === "function"
-              ) {
-                $steps["goToProfilePage"] = await $steps["goToProfilePage"];
-              }
-            }}
-          >
-            <Me
-              data-plasmic-name={"me"}
-              data-plasmic-override={overrides.me}
-              className={classNames("__wab_instance", sty.me)}
-            />
-          </div>
-        </div>
         <div
           data-plasmic-name={"content"}
           data-plasmic-override={overrides.content}
@@ -309,19 +168,8 @@ function PlasmicMainPageLayout__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "sideMenu",
-    "mainPageHeaderMinimal",
-    "me",
-    "content",
-    "section",
-    "navMenu"
-  ],
-
-  sideMenu: ["sideMenu", "mainPageHeaderMinimal", "me"],
-  mainPageHeaderMinimal: ["mainPageHeaderMinimal"],
-  me: ["me"],
+  root: ["root", "sideMenu", "content", "section", "navMenu"],
+  sideMenu: ["sideMenu"],
   content: ["content", "section", "navMenu"],
   section: ["section"],
   navMenu: ["navMenu"]
@@ -360,8 +208,6 @@ export const PlasmicMainPageLayout = Object.assign(
   {
     // Helper components rendering sub-elements
     sideMenu: makeNodeComponent("sideMenu"),
-    mainPageHeaderMinimal: makeNodeComponent("mainPageHeaderMinimal"),
-    me: makeNodeComponent("me"),
     content: makeNodeComponent("content"),
     section: makeNodeComponent("section"),
     navMenu: makeNodeComponent("navMenu"),

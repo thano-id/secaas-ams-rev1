@@ -16,10 +16,16 @@ import {
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants
+  ensureGlobalVariants,
+  generateStateOnChangeProp,
+  generateStateValueProp,
+  set as $stateSet,
+  useDollarState
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import NavMenuItem from "../../NavMenuItem"; // plasmic-import: WbcFyNRVknUx/component
+import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+import SettingsSheet from "../../SettingsSheet"; // plasmic-import: xOE4M5xEAcvA/component
 import { useScreenVariants as useScreenVariants_9QPfl0YfbSni } from "./PlasmicGlobalVariant__Mobile"; // plasmic-import: 9qPFL0yfbSNI/globalVariant
 import "@plasmicapp/react-web/lib/plasmic.css";
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
@@ -31,6 +37,7 @@ import UserCirlceAddSvgrepoComSvgIcon from "./icons/PlasmicIcon__UserCirlceAddSv
 import UserOctagonSvgrepoComSvgIcon from "./icons/PlasmicIcon__UserOctagonSvgrepoComSvg"; // plasmic-import: ZNIK1Plt2HkI/icon
 import BookSavedSvgrepoComSvgIcon from "./icons/PlasmicIcon__BookSavedSvgrepoComSvg"; // plasmic-import: beTsf8tVlWYp/icon
 import GrammerlySvgrepoComSvgIcon from "./icons/PlasmicIcon__GrammerlySvgrepoComSvg"; // plasmic-import: uF5ee7wJSg2x/icon
+import Setting3SvgrepoComSvgIcon from "./icons/PlasmicIcon__Setting3SvgrepoComSvg"; // plasmic-import: 7dMVjw9KPTQN/icon
 
 createPlasmicElementProxy;
 
@@ -67,6 +74,24 @@ function PlasmicNavMenu__RenderFunc(props) {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "settingsSheet.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      }
+    ],
+
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
   const globalVariants = ensureGlobalVariants({
     mobile: useScreenVariants_9QPfl0YfbSni()
   });
@@ -117,14 +142,16 @@ function PlasmicNavMenu__RenderFunc(props) {
           hasGap={true}
           className={classNames(projectcss.all, sty.freeBox__g03Hp)}
         >
-          <NavMenuItem
-            className={classNames("__wab_instance", sty.navMenuItem__we5RS)}
-          >
-            <Building3SvgrepoComSvgIcon
-              className={classNames(projectcss.all, sty.svg__hnnNb)}
-              role={"img"}
-            />
-          </NavMenuItem>
+          <div className={classNames(projectcss.all, sty.freeBox__v7Nh)}>
+            <NavMenuItem
+              className={classNames("__wab_instance", sty.navMenuItem__we5RS)}
+            >
+              <Building3SvgrepoComSvgIcon
+                className={classNames(projectcss.all, sty.svg__hnnNb)}
+                role={"img"}
+              />
+            </NavMenuItem>
+          </div>
           <div className={classNames(projectcss.all, sty.freeBox___6UxY6)}>
             <NavMenuItem
               className={classNames("__wab_instance", sty.navMenuItem__yEtH5)}
@@ -194,15 +221,91 @@ function PlasmicNavMenu__RenderFunc(props) {
               />
             </NavMenuItem>
           </div>
+          <div
+            className={classNames(projectcss.all, sty.freeBox__lMobc)}
+            onClick={async event => {
+              const $steps = {};
+              $steps["updateSettingsSheetOpen"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["settingsSheet", "open"]
+                      },
+                      operation: 0,
+                      value: true
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateSettingsSheetOpen"] != null &&
+                typeof $steps["updateSettingsSheetOpen"] === "object" &&
+                typeof $steps["updateSettingsSheetOpen"].then === "function"
+              ) {
+                $steps["updateSettingsSheetOpen"] = await $steps[
+                  "updateSettingsSheetOpen"
+                ];
+              }
+            }}
+          >
+            <NavMenuItem
+              className={classNames("__wab_instance", sty.navMenuItem__czqLh)}
+            >
+              <Setting3SvgrepoComSvgIcon
+                className={classNames(projectcss.all, sty.svg__tsGpu)}
+                role={"img"}
+              />
+            </NavMenuItem>
+          </div>
         </Stack__>
       </Stack__>
+      <AntdModal
+        data-plasmic-name={"settingsSheet"}
+        data-plasmic-override={overrides.settingsSheet}
+        className={classNames("__wab_instance", sty.settingsSheet)}
+        defaultStylesClassName={classNames(
+          projectcss.root_reset,
+          projectcss.plasmic_default_styles,
+          projectcss.plasmic_mixins,
+          projectcss.plasmic_tokens,
+          plasmic_antd_5_hostless_css.plasmic_tokens,
+          plasmic_plasmic_rich_components_css.plasmic_tokens
+        )}
+        footer={
+          <div className={classNames(projectcss.all, sty.freeBox__fXQl)} />
+        }
+        modalContentClassName={classNames({ [sty["pcls_zw1_k43GSrpz"]]: true })}
+        modalScopeClassName={sty["settingsSheet__modal"]}
+        onOpenChange={generateStateOnChangeProp($state, [
+          "settingsSheet",
+          "open"
+        ])}
+        open={generateStateValueProp($state, ["settingsSheet", "open"])}
+        title={null}
+        trigger={null}
+        width={"100%"}
+        wrapClassName={classNames({ [sty["pcls_nAtB7QgKpfyb"]]: true })}
+      >
+        <SettingsSheet
+          className={classNames("__wab_instance", sty.settingsSheet__mn0Ll)}
+        />
+      </AntdModal>
     </section>
   );
 }
 
 const PlasmicDescendants = {
-  root: ["root", "img"],
-  img: ["img"]
+  root: ["root", "img", "settingsSheet"],
+  img: ["img"],
+  settingsSheet: ["settingsSheet"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -238,6 +341,7 @@ export const PlasmicNavMenu = Object.assign(
   {
     // Helper components rendering sub-elements
     img: makeNodeComponent("img"),
+    settingsSheet: makeNodeComponent("settingsSheet"),
     // Metadata about props expected for PlasmicNavMenu
     internalVariantProps: PlasmicNavMenu__VariantProps,
     internalArgProps: PlasmicNavMenu__ArgProps

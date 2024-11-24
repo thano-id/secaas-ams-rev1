@@ -5,9 +5,11 @@
 // Plasmic Project: qMKbWqzZjuHb1yLhCiN5Mq
 import * as React from "react";
 import { AntdConfigProvider } from "@plasmicpkgs/antd5/skinny/registerConfigProvider";
+import { StrapiCredentialsProvider } from "@plasmicpkgs/plasmic-strapi";
 
 export default function GlobalContextsProvider(props) {
-  const { children, antdConfigProviderProps } = props;
+  const { children, antdConfigProviderProps, strapiCredentialsProviderProps } =
+    props;
   return (
     <AntdConfigProvider
       {...antdConfigProviderProps}
@@ -101,7 +103,23 @@ export default function GlobalContextsProvider(props) {
           : false
       }
     >
-      {children}
+      <StrapiCredentialsProvider
+        {...strapiCredentialsProviderProps}
+        host={
+          strapiCredentialsProviderProps &&
+          "host" in strapiCredentialsProviderProps
+            ? strapiCredentialsProviderProps.host
+            : "https://secaas-api-iman-sd.indoomni.app"
+        }
+        token={
+          strapiCredentialsProviderProps &&
+          "token" in strapiCredentialsProviderProps
+            ? strapiCredentialsProviderProps.token
+            : "bf7d47c7ad4e6ee621873b012cdc6ff4476cd72348f683e9fa1b6ea93ad56ff6a3f147eb00415e63c47ae0d7f974fe6e62e8d72e5551a456e98a50f9743b84af7105b08d87178ed906feafbde12f4e9f96bfd39fc8cf0a789b3c75212b7fdc1353b53ec420e5d9825aecaabeb5a16301386d84ec10f5b8e53273ace36d12912a"
+        }
+      >
+        {children}
+      </StrapiCredentialsProvider>
     </AntdConfigProvider>
   );
 }

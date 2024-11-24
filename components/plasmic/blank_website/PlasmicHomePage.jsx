@@ -40,8 +40,8 @@ import VerifySvgrepoComSvgIcon from "./icons/PlasmicIcon__VerifySvgrepoComSvg"; 
 import TwitterSvgrepoComSvgIcon from "./icons/PlasmicIcon__TwitterSvgrepoComSvg"; // plasmic-import: 8AU18hu3d0PV/icon
 import FacebookSvgrepoComSvgIcon from "./icons/PlasmicIcon__FacebookSvgrepoComSvg"; // plasmic-import: SST1-wFOYZQ3/icon
 import YoutubeSvgrepoComSvgIcon from "./icons/PlasmicIcon__YoutubeSvgrepoComSvg"; // plasmic-import: bhngz8mTgbAr/icon
-import { log as __fn_logger__log } from "../../../pages/utils_logger"; // plasmic-import: logger.log/customFunction
-import { loggedIn as __fn_user__loggedIn } from "../../../pages/utils_user"; // plasmic-import: user.loggedIn/customFunction
+import { log as __fn_logger__log } from "../../../utils/logger"; // plasmic-import: logger.log/customFunction
+import { loggedIn as __fn_user__loggedIn } from "../../../utils/user"; // plasmic-import: user.loggedIn/customFunction
 
 createPlasmicElementProxy;
 
@@ -586,7 +586,7 @@ function PlasmicHomePage__RenderFunc(props) {
                       }
                       onClick={async event => {
                         const $steps = {};
-                        $steps["httpPost"] = true
+                        $steps["login"] = true
                           ? (() => {
                               const actionArgs = {
                                 dataOp: {
@@ -627,19 +627,19 @@ function PlasmicHomePage__RenderFunc(props) {
                             })()
                           : undefined;
                         if (
-                          $steps["httpPost"] != null &&
-                          typeof $steps["httpPost"] === "object" &&
-                          typeof $steps["httpPost"].then === "function"
+                          $steps["login"] != null &&
+                          typeof $steps["login"] === "object" &&
+                          typeof $steps["login"].then === "function"
                         ) {
-                          $steps["httpPost"] = await $steps["httpPost"];
+                          $steps["login"] = await $steps["login"];
                         }
                         $steps["runCode"] = true
                           ? (() => {
                               const actionArgs = {
                                 customFunction: async () => {
                                   return $$.user.loggedIn(
-                                    $steps.httpPost.data.response.jwt,
-                                    $steps.httpPost.data.response.user
+                                    $steps.login.data.response.jwt,
+                                    $steps.login.data.response.user
                                   );
                                 }
                               };

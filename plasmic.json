@@ -201,6 +201,60 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/user/logout"
+        },
+        {
+          "id": "4KAedDWbVyXh",
+          "name": "PropertiesPage",
+          "type": "managed",
+          "projectId": "qMKbWqzZjuHb1yLhCiN5Mq",
+          "renderModuleFilePath": "plasmic/blank_website/PlasmicPropertiesPage.jsx",
+          "importSpec": {
+            "modulePath": "../pages/user/properties.jsx"
+          },
+          "cssFilePath": "plasmic/blank_website/PlasmicPropertiesPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/user/properties"
+        },
+        {
+          "id": "isERhG8IUBG8",
+          "name": "SideMenu",
+          "type": "managed",
+          "projectId": "qMKbWqzZjuHb1yLhCiN5Mq",
+          "renderModuleFilePath": "plasmic/blank_website/PlasmicSideMenu.jsx",
+          "importSpec": {
+            "modulePath": "SideMenu.jsx"
+          },
+          "cssFilePath": "plasmic/blank_website/PlasmicSideMenu.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "xOE4M5xEAcvA",
+          "name": "SettingsSheet",
+          "type": "managed",
+          "projectId": "qMKbWqzZjuHb1yLhCiN5Mq",
+          "renderModuleFilePath": "plasmic/blank_website/PlasmicSettingsSheet.jsx",
+          "importSpec": {
+            "modulePath": "SettingsSheet.jsx"
+          },
+          "cssFilePath": "plasmic/blank_website/PlasmicSettingsSheet.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "14UlPLnVBmr4",
+          "name": "TenantsPage",
+          "type": "managed",
+          "projectId": "qMKbWqzZjuHb1yLhCiN5Mq",
+          "renderModuleFilePath": "plasmic/blank_website/PlasmicTenantsPage.jsx",
+          "importSpec": {
+            "modulePath": "../pages/user/tenants.jsx"
+          },
+          "cssFilePath": "plasmic/blank_website/PlasmicTenantsPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/user/tenants"
         }
       ],
       "icons": [
@@ -303,6 +357,16 @@
           "id": "nAMYBvpjdNDJ",
           "name": "UndoSvgrepoComSvgIcon",
           "moduleFilePath": "plasmic/blank_website/icons/PlasmicIcon__UndoSvgrepoComSvg.jsx"
+        },
+        {
+          "id": "7dMVjw9KPTQN",
+          "name": "Setting3SvgrepoComSvgIcon",
+          "moduleFilePath": "plasmic/blank_website/icons/PlasmicIcon__Setting3SvgrepoComSvg.jsx"
+        },
+        {
+          "id": "2PA8Rbm736Rs",
+          "name": "Setting5SvgrepoComSvgIcon",
+          "moduleFilePath": "plasmic/blank_website/icons/PlasmicIcon__Setting5SvgrepoComSvg.jsx"
         }
       ],
       "images": [
@@ -343,85 +407,92 @@
         {
           "defaultExport": false,
           "id": "logger.log",
-          "importPath": "./pages/utils_logger.js",
+          "importPath": "./utils/logger.js",
           "name": "log",
           "namespace": "logger"
         },
         {
           "defaultExport": false,
           "id": "localStorage.setString",
-          "importPath": "./pages/utils_localStorage.js",
+          "importPath": "./utils/localStorage.js",
           "name": "setString",
           "namespace": "localStorage"
         },
         {
           "defaultExport": false,
           "id": "localStorage.setObject",
-          "importPath": "./pages/utils_localStorage.js",
+          "importPath": "./utils/localStorage.js",
           "name": "setObject",
           "namespace": "localStorage"
         },
         {
           "defaultExport": false,
           "id": "localStorage.getString",
-          "importPath": "./pages/utils_localStorage.js",
+          "importPath": "./utils/localStorage.js",
           "name": "getString",
           "namespace": "localStorage"
         },
         {
           "defaultExport": false,
           "id": "localStorage.getObject",
-          "importPath": "./pages/utils_localStorage.js",
+          "importPath": "./utils/localStorage.js",
           "name": "getObject",
           "namespace": "localStorage"
         },
         {
           "defaultExport": false,
           "id": "localStorage.remove",
-          "importPath": "./pages/utils_localStorage.js",
+          "importPath": "./utils/localStorage.js",
           "name": "remove",
           "namespace": "localStorage"
         },
         {
           "defaultExport": false,
           "id": "user.loggedIn",
-          "importPath": "./pages/utils_user.js",
+          "importPath": "./utils/user.js",
           "name": "loggedIn",
           "namespace": "user"
         },
         {
           "defaultExport": false,
           "id": "user.loggedOut",
-          "importPath": "./pages/utils_user.js",
+          "importPath": "./utils/user.js",
           "name": "loggedOut",
           "namespace": "user"
         },
         {
           "defaultExport": false,
           "id": "user.clear",
-          "importPath": "./pages/utils_user.js",
+          "importPath": "./utils/user.js",
           "name": "clear",
           "namespace": "user"
         },
         {
           "defaultExport": false,
           "id": "user.isLoggedIn",
-          "importPath": "./pages/utils_user.js",
+          "importPath": "./utils/user.js",
           "name": "isLoggedIn",
           "namespace": "user"
         },
         {
           "defaultExport": false,
           "id": "user.getJwt",
-          "importPath": "./pages/utils_user.js",
+          "importPath": "./utils/user.js",
           "name": "getJwt",
           "namespace": "user"
         },
         {
           "defaultExport": false,
           "id": "user.getUser",
-          "importPath": "./pages/utils_user.js",
+          "importPath": "./utils/user.js",
           "name": "getUser",
+          "namespace": "user"
+        },
+        {
+          "defaultExport": false,
+          "id": "user.getAuthHeader",
+          "importPath": "./utils/user.js",
+          "name": "getAuthHeader",
           "namespace": "user"
         }
       ]
@@ -446,7 +517,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-nav"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "jkU633o1Cz7HrJdwdxhVHk",
@@ -500,7 +572,8 @@
           }
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "ohDidvG9XsCeFumugENU3J",
@@ -900,7 +973,8 @@
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerBreadcrumb"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
@@ -956,6 +1030,41 @@
           "name": "Timer",
           "displayName": "hostless-timer",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        }
+      ],
+      "customFunctions": [],
+      "jsBundleThemes": []
+    },
+    {
+      "projectId": "pnayxrZQDQNLaMhqWY9Kua",
+      "projectApiToken": "LXmHVLWuAkPo1ZrKx4YE5w7Z6OP5gcGGU72DDYQqACih1ZhiG1HWnGFEXaShFtn4j9bsii6QofRTjOjoUb4A",
+      "projectName": "plasmic-strapi",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/plasmic_strapi/plasmic.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "plasmic/plasmic_strapi/PlasmicGlobalContextsProvider.jsx",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "3PiAu_DqaPA",
+          "name": "StrapiCollection",
+          "displayName": "StrapiCollection",
+          "componentImportPath": "@plasmicpkgs/plasmic-strapi"
+        },
+        {
+          "id": "Yal_C-reFIU",
+          "name": "StrapiField",
+          "displayName": "StrapiField",
+          "componentImportPath": "@plasmicpkgs/plasmic-strapi"
+        },
+        {
+          "id": "Nz3wPi974V7",
+          "name": "StrapiCredentialsProvider",
+          "displayName": "StrapiCredentialsProvider",
+          "componentImportPath": "@plasmicpkgs/plasmic-strapi"
         }
       ],
       "customFunctions": []
