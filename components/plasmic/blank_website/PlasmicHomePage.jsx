@@ -453,7 +453,7 @@ function PlasmicHomePage__RenderFunc(props) {
                         className={"plasmic_default__all plasmic_default__span"}
                         style={{ textDecoration: "underline" }}
                       >
-                        {"Hello! Nice having you again."}
+                        {"Hello! Nice seeing you again."}
                       </span>
                     </React.Fragment>
                   </div>
